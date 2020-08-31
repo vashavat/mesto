@@ -3,3 +3,10 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+@media (min-width: 769px) {
+  .profile__avatar {
+    margin-right: 30px;
+    margin-left: 0px;
+  }
+}

@@ -1,5 +1,16 @@
 .profile__info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   color: #fff;
   text-align: center;
   margin-top: 18px;
+}
+
+@media (min-width: 769px) {
+  .profile__info {
+    margin-right: auto;
+    text-align: left;
+    margin-top: 0;
+  }
 }

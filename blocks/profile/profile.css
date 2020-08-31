@@ -2,6 +2,7 @@
   margin-top: 42px;
   margin-left: 19px;
   margin-right: 19px;
+
 }
 
 @media (min-width: 426px) {
@@ -14,5 +15,13 @@
   .profile {
     display: flex;
     max-width: 882px;
+    align-items: center;
+  }
+}
+
+@media (min-width: 911px) {
+  .profile {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
