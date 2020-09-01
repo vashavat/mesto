@@ -1,0 +1,12 @@
+.button_type_close {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: -45px;
+  right: -45px;
+}
+
+.button_type_close:hover {
+  transition: 0.3s linear;
+  opacity: 0.6;
+}
