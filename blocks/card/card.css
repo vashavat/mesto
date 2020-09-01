@@ -1,0 +1,13 @@
+.card {
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 21px;
+  padding-right: 21px;
+  background-color: #fff;
+  max-width: 282px;
+  min-height: 360px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
