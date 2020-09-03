@@ -1,24 +1,27 @@
-const root = document.querySelector('.root');
-const popup = root.querySelector('.popup');
-const profile= root.querySelector('.profile');
-const popupEditButton = profile.querySelector('.button_type_edit');
+const popup = document.querySelector('.popup');
+const profile= document.querySelector('.profile');
+const form = popup.querySelector('.popup__edit-form');
+const profileEditButton = profile.querySelector('.button_type_edit');
 const popupCloseButton = popup.querySelector('.button_type_close');
+const profileSaveButton = popup.querySelector('.button_type_submit');
 
 let profileName = profile.querySelector('.profile__name');
 let profileDescription = profile.querySelector('.profile__description');
 
-let newNameInput = popup.querySelector('.js-popup__profile-name');
-let newNameValue = profileName.textContent;
-newNameInput.setAttribute('value', newNameValue);
+let nameInput = popup.querySelector('.js-popup__profile-name');
+let descriptionInput = popup.querySelector('.js-popup__profile-description');
 
-let editDescriptionInput = popup.querySelector('.js-popup__profile-description');
-let editDescriptionValue = profileDescription.textContent;
-editDescriptionInput.setAttribute('value', editDescriptionValue);
+let description = profileDescription.textContent;
+descriptionInput.setAttribute('value', description);
 
 
 const popupToggle = function () {
+  if (popup.classList.contains('popup_is-opened')) {
+    form.reset();
+  }
+  nameInput.value = profileName.textContent;
+  descriptionInput.value = profileDescription.textContent;
   popup.classList.toggle('popup_is-opened');
-  newNameValue = profileName.textContent;
 }
 
 const popupCloseByClickOverlay = function () {
@@ -28,15 +31,17 @@ const popupCloseByClickOverlay = function () {
   popupToggle();
 }
 
-popupEditButton.addEventListener('click', popupToggle);
+profileEditButton.addEventListener('click', popupToggle);
 popupCloseButton.addEventListener('click', popupToggle);
 popup.addEventListener('click', popupCloseByClickOverlay);
 
+// Сохранение формы
 
-
-const changeValue = function () {
-
-
-
-
+const formSubmitHandler = function (evt) {
+  evt.preventDefault();
+  profileName.textContent = nameInput.value;
+  profileDescription.textContent = descriptionInput.value;
+  popupToggle();
 }
+
+profileSaveButton.addEventListener('click', formSubmitHandler);
