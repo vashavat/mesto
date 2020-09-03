@@ -10,3 +10,7 @@
   background-color: transparent;
 }
 
+.button_type_like:hover {
+  opacity: 0.5;
+  transition: 0.3s linear;
+}

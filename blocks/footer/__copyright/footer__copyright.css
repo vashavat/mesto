@@ -4,3 +4,9 @@
   line-height: 1.21;
   color: #545454;
 }
+
+@media (min-width: 426px) {
+  .footer__copyright {
+    font-size: 18px;
+  }
+}

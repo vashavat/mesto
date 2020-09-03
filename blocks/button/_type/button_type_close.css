@@ -2,8 +2,13 @@
   border: none;
   background-color: transparent;
   position: absolute;
-  top: -45px;
-  right: -45px;
+  top: -40px;
+  right: -40px;
+  background-image: url('../../../images/icon-close.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
 }
 
 .button_type_close:hover {

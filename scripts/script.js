@@ -3,28 +3,27 @@ const profile= document.querySelector('.profile');
 const form = popup.querySelector('.popup__edit-form');
 const profileEditButton = profile.querySelector('.button_type_edit');
 const popupCloseButton = popup.querySelector('.button_type_close');
-const profileSaveButton = popup.querySelector('.button_type_submit');
+const profileSaveButton = popup.querySelector('.popup__edit-form');
 
 let profileName = profile.querySelector('.profile__name');
 let profileDescription = profile.querySelector('.profile__description');
 
-let nameInput = popup.querySelector('.js-popup__profile-name');
-let descriptionInput = popup.querySelector('.js-popup__profile-description');
-
-let description = profileDescription.textContent;
-descriptionInput.setAttribute('value', description);
+let nameInput = popup.querySelector('.popup__input-field_name');
+let descriptionInput = popup.querySelector('.popup__input-field_description');
 
 
 const popupToggle = function () {
   if (popup.classList.contains('popup_is-opened')) {
     form.reset();
+  } else {
+    nameInput.value = profileName.textContent;
+    descriptionInput.value = profileDescription.textContent;
   }
-  nameInput.value = profileName.textContent;
-  descriptionInput.value = profileDescription.textContent;
+
   popup.classList.toggle('popup_is-opened');
 }
 
-const popupCloseByClickOverlay = function () {
+const popupCloseByClickOverlay = function (event) {
   if (event.target !== event.currentTarget) {
     return;
   }
@@ -44,4 +43,4 @@ const formSubmitHandler = function (evt) {
   popupToggle();
 }
 
-profileSaveButton.addEventListener('click', formSubmitHandler);
+profileSaveButton.addEventListener('submit', formSubmitHandler);
