@@ -96,27 +96,28 @@ profileSaveButton.addEventListener('submit', formSubmitHandler);
 
 //
 
-const addCard = function (nameValue, linkValue) {
+const addCard = function (item) {
   const cardTemplate = document.querySelector('#card-template').content;
   const cardElement = cardTemplate.cloneNode(true);
 
-  console.log(cardElement);
+  const nameValue = item.name;
+  const linkValue = item.link;
 
   cardElement.querySelector('.card__title').textContent = nameValue;
   cardElement.querySelector('.card__image').src = linkValue;
 
-  cardsList.append(cardElement);
+  cardsList.prepend(cardElement);
 }
 
 const addCardHandler = function(evt) {
   evt.preventDefault();
-  const name = document.querySelector('.popup__input-field_card-name');
-  const link = document.querySelector('.popup__input-field_card-link');
-
-  addCard(name.value, link.value);
-  console.log(name);
+  const cardName = document.querySelector('.popup__input-field_card-name');
+  const cardLink = document.querySelector('.popup__input-field_card-link');
+  const item = {name: cardName.value, link: cardLink.value};
+  addCard(item);
   popupAddFormToggle();
-
 }
 
 cardAddButton.addEventListener('submit', addCardHandler);
+
+initialCards.forEach(addCard);
