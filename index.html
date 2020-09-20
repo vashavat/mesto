@@ -24,36 +24,7 @@
 
     <section class="cards">
       <ul class="cards__list">
-        <li class="card">
-          <h3 class="card__title">Карачаево-Черкесия</h3>
-          <img src="./images/kirill-pershin-1088404-unsplash.png" alt="Фотография Карачаево-Черкесии" class="card__image">
-          <button class="button button_type_like" type="button"></button>
-        </li>
-        <li class="card">
-          <h3 class="card__title">Гора Эльбрус</h3>
-          <img src="./images/elbrus.png" alt="Фотография Эльбруса" class="card__image">
-          <button class="button button_type_like" type="button"></button>
-        </li>
-        <li class="card">
-          <h3 class="card__title">Домбай</h3>
-          <img src="./images/dombai.png" alt="Фотография Домбая" class="card__image">
-          <button class="button button_type_like" type="button"></button>
-        </li>
-        <li class="card">
-          <h3 class="card__title">Гора Эльбрус</h3>
-          <img src="./images/elbrus.png" alt="Фотография Эльбруса" class="card__image">
-          <button class="button button_type_like" type="button"></button>
-        </li>
-        <li class="card">
-          <h3 class="card__title">Домбай</h3>
-          <img src="./images/dombai.png" alt="Фотография Домбая" class="card__image">
-          <button class="button button_type_like" type="button"></button>
-        </li>
-        <li class="card">
-          <h3 class="card__title">Карачаево-Черкесия</h3>
-          <img src="./images/kirill-pershin-1088404-unsplash.png" alt="Фотография Карачаево-Черкесии" class="card__image">
-          <button class="button button_type_like" type="button"></button>
-        </li>
+
       </ul>
     </section>
   </main>
@@ -62,17 +33,46 @@
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
 
-  <section class="popup">
+  <section class="popup popup_type_edit-profile">
     <div class="popup__container">
       <button class="button button_type_close" type="button"></button>
       <form class="popup__edit-form" name="editprofile">
         <h2 class="popup__title">Редактировать профиль</h2>
         <input class="popup__input-field popup__input-field_name" type="text" name="profilename" id="profile-name-id" value="">
         <input class="popup__input-field popup__input-field_description" type="text" name="profiledescription" id="profile-description-id" value="">
-        <button class="button button_type_submit" type="submit">Сохранить</button>
+        <button class="button button_type_submit button_type_save-profile" type="submit">Сохранить</button>
       </form>
     </div>
   </section>
+
+  <section class="popup popup_type_add-card">
+    <div class="popup__container">
+      <button class="button button_type_close" type="button"></button>
+      <form class="popup__add-card-form" name="addcard">
+        <h2 class="popup__title">Новое место</h2>
+        <input class="popup__input-field popup__input-field_card-name" type="text" name="cardname" id="card-name-id" value="" placeholder="Название">
+        <input class="popup__input-field popup__input-field_card-link" type="text" name="cardlink" id="card-link-id" value="" placeholder="Ссылка на картинку">
+        <button class="button button_type_submit button_type_add-card" type="submit">Создать</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="popup popup_type_image">
+    <div class="popup__container popup__container_type_image">
+      <button class="button button_type_close" type="button"></button>
+      <img class="popup__image">
+      <h2 class="popup__image-name"></h2>
+    </div>
+  </section>
+
+  <template id="card-template">
+    <li class="card">
+      <h3 class="card__title"></h3>
+      <img class="card__image">
+      <button class="button button_type_like" type="button"></button>
+      <button class="button button_type_delete" type="button"></button>
+    </li>
+  </template>
 
   <script src="./scripts/script.js" defer></script>
 
