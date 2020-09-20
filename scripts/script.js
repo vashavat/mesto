@@ -131,6 +131,7 @@ const addCard = function (item) {
   cardElement.querySelector('.card__image').addEventListener('click', function(evt) {
     popupImageToggle();
     popupImage.querySelector('.popup__image').src = evt.target.src;
+    popupImage.querySelector('.popup__image').alt = item.name;
     popupImage.querySelector('.popup__image-name').textContent = item.name;
   });
 
