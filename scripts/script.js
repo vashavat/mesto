@@ -110,6 +110,10 @@ const addCard = function (item) {
     evt.target.classList.toggle('button_type_like-active');
   });
 
+  cardElement.querySelector('.button_type_delete').addEventListener('click', function (evt) {
+    evt.target.parentElement.remove();
+  });
+
   cardsList.prepend(cardElement);
 }
 
@@ -123,5 +127,7 @@ const addCardHandler = function(evt) {
 }
 
 cardAddButton.addEventListener('submit', addCardHandler);
+
+
 
 initialCards.forEach(addCard);
