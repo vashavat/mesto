@@ -83,6 +83,7 @@ popupAddCardCloseButton.addEventListener('click', popupAddFormToggle);
 popupAddCard.addEventListener('click', popupAddCardCloseByClickOverlay);
 
 
+
 // Сохранение формы
 
 const formSubmitHandler = function (evt) {
@@ -105,6 +106,9 @@ const addCard = function (item) {
 
   cardElement.querySelector('.card__title').textContent = nameValue;
   cardElement.querySelector('.card__image').src = linkValue;
+  cardElement.querySelector('.button_type_like').addEventListener('click', function(evt) {
+    evt.target.classList.toggle('button_type_like-active');
+  });
 
   cardsList.prepend(cardElement);
 }
