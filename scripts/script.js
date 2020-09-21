@@ -25,20 +25,21 @@ const initialCards = [
   }
 ];
 
+const profile= document.querySelector('.profile');
+const profileEditButton = profile.querySelector('.button_type_edit');
+const popupAddButton = profile.querySelector('.button_type_add');
+
 const popupEditProfile = document.querySelector('.popup_type_edit-profile');
 const popupAddCard = document.querySelector('.popup_type_add-card');
 const popupImage = document.querySelector('.popup_type_image');
-const profile= document.querySelector('.profile');
 const editForm = popupEditProfile.querySelector('.popup__edit-form');
 const addForm = popupAddCard.querySelector('.popup__add-card-form');
 const cardsList = document.querySelector('.cards__list');
 
-const profileEditButton = profile.querySelector('.button_type_edit');
 const popupEditProfileCloseButton = popupEditProfile.querySelector('.button_type_close');
 const profileSaveButton = popupEditProfile.querySelector('.popup__edit-form');
 const popupAddCardCloseButton = popupAddCard.querySelector('.button_type_close');
 const popupImageCloseButton = popupImage.querySelector('.button_type_close');
-const popupAddButton = profile.querySelector('.button_type_add');
 const cardAddButton = document.querySelector('.popup__add-card-form');
 
 let profileName = profile.querySelector('.profile__name');
@@ -109,7 +110,7 @@ const formSubmitHandler = function (evt) {
 
 profileSaveButton.addEventListener('submit', formSubmitHandler);
 
-//
+// Добавление карточки
 
 const addCard = function (item) {
   const cardTemplate = document.querySelector('#card-template').content;
