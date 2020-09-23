@@ -1,62 +1,53 @@
-const initialCards = [
-  {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-      name: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-      name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-      name: 'Камчатка',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-      name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-      name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
 const profile= document.querySelector('.profile');
-const profileEditButton = profile.querySelector('.button_type_edit');
-const popupAddButton = profile.querySelector('.button_type_add');
 
+// Popups
 const popupEditProfile = document.querySelector('.popup_type_edit-profile');
 const popupAddCard = document.querySelector('.popup_type_add-card');
 const popupImage = document.querySelector('.popup_type_image');
-const editForm = popupEditProfile.querySelector('.popup__edit-form');
-const addForm = popupAddCard.querySelector('.popup__add-card-form');
-const cardsList = document.querySelector('.cards__list');
 
-const popupEditProfileCloseButton = popupEditProfile.querySelector('.button_type_close');
+// Buttons
+const profileEditButton = profile.querySelector('.button_type_edit');
 const profileSaveButton = popupEditProfile.querySelector('.popup__edit-form');
+const popupCardAddButton = profile.querySelector('.button_type_add');
+const cardAddButton = popupAddCard.querySelector('.popup__add-card-form');
+const profileEditCloseButton = popupEditProfile.querySelector('.button_type_close');
 const popupAddCardCloseButton = popupAddCard.querySelector('.button_type_close');
 const popupImageCloseButton = popupImage.querySelector('.button_type_close');
-const cardAddButton = document.querySelector('.popup__add-card-form');
 
-let profileName = profile.querySelector('.profile__name');
-let profileDescription = profile.querySelector('.profile__description');
+// Forms
+const editProfileForm = popupEditProfile.querySelector('.popup__edit-form');
+const addCardForm = popupAddCard.querySelector('.popup__add-card-form');
 
-let nameInput = popupEditProfile.querySelector('.popup__input-field_name');
-let descriptionInput = popupEditProfile.querySelector('.popup__input-field_description');
+const cardsList = document.querySelector('.cards__list');
+
+
+const profileName = profile.querySelector('.profile__name');
+const profileDescription = profile.querySelector('.profile__description');
+
+const nameInput = popupEditProfile.querySelector('.popup__input-field_name');
+const descriptionInput = popupEditProfile.querySelector('.popup__input-field_description');
+
+const openPopup = function (popup) {
+  popup.classList.add('popup_is-opened');
+}
+
+const closePopup = function (popup) {
+  popup.classList.remove('popup_is-opened');
+}
+
+const resetForm = function () {
+
+}
 
 
 const popupEditFormToggle = function () {
   if (popupEditProfile.classList.contains('popup_is-opened')) {
-    editForm.reset();
+    editProfileForm.reset();
   } else {
     nameInput.value = profileName.textContent;
     descriptionInput.value = profileDescription.textContent;
   }
-  popupEditProfile.classList.toggle('popup_is-opened');
+  openPopup(popupEditProfile);
 }
 
 const popupAddFormToggle = function () {
@@ -89,10 +80,10 @@ const popupImageCloseByClickOverlay = function (event) {
 }
 
 profileEditButton.addEventListener('click', popupEditFormToggle);
-popupEditProfileCloseButton.addEventListener('click', popupEditFormToggle);
+profileEditCloseButton.addEventListener('click', popupEditFormToggle);
 popupEditProfile.addEventListener('click', popupEditProfileCloseByClickOverlay);
 
-popupAddButton.addEventListener('click', popupAddFormToggle);
+popupCardAddButton.addEventListener('click', popupAddFormToggle);
 popupAddCardCloseButton.addEventListener('click', popupAddFormToggle);
 popupAddCard.addEventListener('click', popupAddCardCloseByClickOverlay);
 

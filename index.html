@@ -38,8 +38,8 @@
       <button class="button button_type_close" type="button"></button>
       <form class="popup__edit-form" name="editprofile">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <input class="popup__input-field popup__input-field_name" type="text" name="profilename" id="profile-name-id" value="">
-        <input class="popup__input-field popup__input-field_description" type="text" name="profiledescription" id="profile-description-id" value="">
+        <input class="popup__input-field popup__input-field_name" type="text" name="profilename" id="profile-name-id" value="" placeholder="Имя" required>
+        <input class="popup__input-field popup__input-field_description" type="text" name="profiledescription" id="profile-description-id" value="" placeholder="Описание" required>
         <button class="button button_type_submit button_type_save-profile" type="submit">Сохранить</button>
       </form>
     </div>
@@ -50,8 +50,8 @@
       <button class="button button_type_close" type="button"></button>
       <form class="popup__add-card-form" name="addcard">
         <h2 class="popup__title">Новое место</h2>
-        <input class="popup__input-field popup__input-field_card-name" type="text" name="cardname" id="card-name-id" value="" placeholder="Название">
-        <input class="popup__input-field popup__input-field_card-link" type="text" name="cardlink" id="card-link-id" value="" placeholder="Ссылка на картинку">
+        <input class="popup__input-field popup__input-field_card-name" type="text" name="cardname" id="card-name-id" value="" placeholder="Название" required>
+        <input class="popup__input-field popup__input-field_card-link" type="text" name="cardlink" id="card-link-id" value="" placeholder="Ссылка на картинку" required>
         <button class="button button_type_submit button_type_add-card" type="submit">Создать</button>
       </form>
     </div>
@@ -74,6 +74,7 @@
     </li>
   </template>
 
+  <script src="./scripts/data.js"></script>
   <script src="./scripts/script.js" defer></script>
 
 </body>
